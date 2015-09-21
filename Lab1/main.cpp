@@ -45,16 +45,25 @@ public:
 
 int main()
 {
+    int total_area=0;
+
     Triangle Tri;
     Tri.setWidth(5);
     Tri.setHeight(7);
 
     cout << "Total Triangle area: " << Tri.getArea() << endl;
+    total_area += Tri.getArea();
 
     Rectangle Rec;
     Rec.setWidth(2);
     Rec.setHeight(4);
+
     cout << "Area of Rectangle: " << Rec.getArea() << endl;
+    total_area += Rec.getArea();
+
+
+
+    cout << "Area of All Shapes: " << total_area << endl;
 
     return 0;
 }
