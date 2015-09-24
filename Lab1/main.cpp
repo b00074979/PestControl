@@ -1,4 +1,5 @@
 #include <iostream>
+#define PI 3.141592653589
 
 using namespace std;
 
@@ -35,7 +36,7 @@ public:
     double getArea()
     {
 
-        return (width*height)/2;
+        return (double)(width*height)/2;
     }
 };
 
@@ -48,13 +49,14 @@ public:
         return width*height;
     }
 };
+
 class Circle: public Shape
 {
 
 public:
     double getArea()
     {
-        return (3.14*radius*radius) ;
+        return (double)(PI*radius*radius);
     }
 };
 
@@ -79,7 +81,6 @@ int main()
 
     Circle Cir;
     Cir.setRadius(4);
-
 
     cout << "Area of Circle: " << Cir.getArea() << endl;
     total_area += Cir.getArea();
