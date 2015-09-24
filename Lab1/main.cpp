@@ -6,7 +6,7 @@ class Shape
 {
 
 public:
-    virtual int getArea()=0;
+    virtual double getArea()=0;
     void setWidth(int w)
     {
         width = w;
@@ -15,18 +15,24 @@ public:
     {
         height = h;
     }
+    void setRadius(int r)
+    {
+        radius = r;
+    }
 
 
 protected:
     int width;
     int height;
+    int radius;
+
 };
 
 class Triangle: public Shape
 {
 
 public:
-    int getArea()
+    double getArea()
     {
 
         return (width*height)/2;
@@ -37,15 +43,25 @@ class Rectangle: public Shape
 {
 
 public:
-    int getArea()
+    double getArea()
     {
         return width*height;
     }
 };
+class Circle: public Shape
+{
+
+public:
+    double getArea()
+    {
+        return (3.14*radius*radius) ;
+    }
+};
+
 
 int main()
 {
-    int total_area=0;
+    double total_area=0;
 
     Triangle Tri;
     Tri.setWidth(5);
@@ -61,7 +77,12 @@ int main()
     cout << "Area of Rectangle: " << Rec.getArea() << endl;
     total_area += Rec.getArea();
 
+    Circle Cir;
+    Cir.setRadius(4);
 
+
+    cout << "Area of Circle: " << Cir.getArea() << endl;
+    total_area += Cir.getArea();
 
     cout << "Area of All Shapes: " << total_area << endl;
 
